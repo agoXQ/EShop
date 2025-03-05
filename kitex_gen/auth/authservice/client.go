@@ -5,8 +5,10 @@ package authservice
 import (
 	"context"
 	auth "eshop/kitex_gen/auth"
+
 	client "github.com/cloudwego/kitex/client"
 	callopt "github.com/cloudwego/kitex/client/callopt"
+	// etcd "github.com/kitex-contrib/registry-etcd"
 )
 
 // Client is designed to provide IDL-compatible methods with call-option parameter for kitex framework.
@@ -30,6 +32,14 @@ func NewClient(destService string, opts ...client.Option) (Client, error) {
 		kClient: newServiceClient(kc),
 	}, nil
 }
+
+// func NewClient(destService string, opts ...client.Option) (Client, error) {
+// 	r,err:=etcd.NewEtcdResolver([]string{"127.0.0.1:2379"})
+// 	if err!=nil{
+// 		log.Fatal(err)
+// 	}
+// 	return r,err
+// }
 
 // MustNewClient creates a client for the service defined in IDL. It panics if any error occurs.
 func MustNewClient(destService string, opts ...client.Option) Client {

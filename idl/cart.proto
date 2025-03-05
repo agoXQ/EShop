@@ -20,7 +20,9 @@ message AddItemReq {
   CartItem item = 2;
 }
 
-message AddItemResp {}
+message AddItemResp {
+  uint32 status=1;
+}
 
 message EmptyCartReq {
   uint32 user_id = 1;
@@ -39,4 +41,6 @@ message Cart {
   repeated CartItem items = 2;
 }
 
-message EmptyCartResp {}
+message EmptyCartResp {
+  uint32 status=1;
+}

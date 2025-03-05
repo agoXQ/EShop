@@ -1102,4 +1102,4 @@ var fieldIDToName_MarkOrderPaidReq = map[int32]string{
 
 var fieldIDToName_MarkOrderPaidResp = map[int32]string{}
 
-var _ = cart.File_cart_proto
+// var _ = cart.File_cart_proto
